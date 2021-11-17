@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="index.js"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "78a9b28c3e214519a986b68b5e19cd7b"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
   <title>Lab 9</title>
 
   <style>
@@ -69,39 +77,26 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
-      <button>Trigger a Global Error</button>
+      <button id="consoleLog">Console Log</button>
+      <button id='consoleError'>Console Error</button>
+      <button id='consoleCount'>Console Count</button>
+      <button id='consoleWarn'>Console Warn</button>
+      <button id='consoleAssert'>Console Assert</button>
+      <button id='consoleClear'>Console Clear</button>
+      <button id='consoleDir'>Console Dir</button>
+      <button id='consoleDirxml'>Console dirxml</button>
+      <button id='consoleGroupStart'>Console Group Start</button>
+      <button id='consoleGroupEnd'>Console Group End</button>
+      <button id='consoleTable'>Console Table</button>
+      <button id='startTimer'>Start Timer</button>
+      <button id='endTimer'>End Timer</button>
+      <button id='consoleTrace'>Console Trace</button>
+      <button id='triggerAGlobalError'>Trigger a Global Error</button>
     </section>
   </main>
 
   <script>
-    let form = document.querySelector('form');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let output = document.querySelector('output');
-      let firstNum = document.querySelector('#first-num').value;
-      let secondNum = document.querySelector('#second-num').value;
-      let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
-    });
-
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
-    // Start your code here
-    // You may move this JS to another file if you wish
+    // You may move this JS to another file if you wish 
   </script>
 </body>
 
